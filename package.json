@@ -1,6 +1,6 @@
 {
 	"name": "@rizom/regenerate-images",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
@@ -27,6 +27,10 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./HeaderButton.svelte": {
+			"types": "./dist/HeaderButton.svelte.d.ts",
+			"svelte": "./dist/HeaderButton.svelte"
 		}
 	},
 	"peerDependencies": {
