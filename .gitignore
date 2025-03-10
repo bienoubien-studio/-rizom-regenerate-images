@@ -27,4 +27,7 @@ vite.config.ts.timestamp-*
 .rizom
 .cache
 db
+app.generated.d.ts
+src/lib/schema
 src/routes/(rizom)
+rizom.config.browser.js
