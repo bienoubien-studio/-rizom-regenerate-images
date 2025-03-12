@@ -10,7 +10,7 @@
 
 	const regenerate = async () => {
 		processing = true;
-		const res = await fetch(`/api/regenerate_sizes?slug=${collection.config.slug}`, {
+		const res = await fetch(`/api/regenerate_images?slug=${collection.config.slug}`, {
 			method: 'post'
 		});
 		if (res.ok) {

@@ -5,7 +5,7 @@ import HeaderButton from './HeaderButton.svelte';
 
 type GenericDoc = { id: string; filename: string; mimeType: string; [x: string]: any };
 
-export const regenerateImageSizes: Plugin = () => {
+export const regenerateImages: Plugin = () => {
 	const regenerate = async (event: RequestEvent) => {
 		// get params
 		const params = event.url.searchParams;
@@ -77,7 +77,7 @@ export const regenerateImageSizes: Plugin = () => {
 	};
 
 	return {
-		name: 'regenerateImageSizes',
+		name: 'regenerateImages',
 
 		configure: (config) => {
 			config = {
@@ -94,7 +94,7 @@ export const regenerateImageSizes: Plugin = () => {
 		},
 
 		routes: {
-			'/api/regenerate_sizes': {
+			'/api/regenerate_images': {
 				POST: regenerate
 			}
 		}
