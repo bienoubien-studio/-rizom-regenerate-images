@@ -1,5 +1,5 @@
 import { json, type RequestEvent } from '@sveltejs/kit';
-import { type Plugin } from 'rizom';
+import { type Plugin } from 'rizom/types';
 import { config as configUtil } from 'rizom/util';
 import HeaderButton from './HeaderButton.svelte';
 
