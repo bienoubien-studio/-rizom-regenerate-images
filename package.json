@@ -68,7 +68,7 @@
 		"@lucide/svelte": "^0.479.0",
 		"better-sqlite3": "^11.8.1",
 		"drizzle-orm": "^0.40.0",
-		"rizom": "^0.3.4",
+		"rizom": "^0.12.1",
 		"svelte-sonner": "^0.3.28"
 	}
 }
