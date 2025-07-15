@@ -69,7 +69,7 @@
 		"better-sqlite3": "^11.8.1",
 		"drizzle-kit": "^0.31.4",
 		"drizzle-orm": "^0.40.0",
-		"rizom": "^0.13.1",
+		"rizom": "^0.13.2",
 		"sharp": "^0.34.3",
 		"svelte-sonner": "^0.3.28"
 	}
