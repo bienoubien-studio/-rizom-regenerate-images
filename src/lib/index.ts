@@ -20,7 +20,7 @@ export const regenerateImages: Plugin = () => {
 			throw new Error(`${slug} is not a collection`);
 		}
 		// get the related collection api
-		const collectionAPI = event.locals.api.collection(slug);
+		const collectionAPI = event.locals.rizom.collection(slug);
 
 		// check if it's an upload collection
 		const config = collectionAPI.config;

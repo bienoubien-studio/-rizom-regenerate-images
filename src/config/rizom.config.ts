@@ -1,5 +1,5 @@
-import { regenerateImageSizes } from '$lib/index.js';
-import type { Config } from 'rizom';
+import { regenerateImages } from '$lib/index.js';
+import { defineConfig } from 'rizom';
 import { collection } from 'rizom';
 import { text } from 'rizom/fields';
 
@@ -8,10 +8,11 @@ const Pages = collection('pages', {
 	fields: [text('title').isTitle()]
 });
 
-const config: Config = {
+const config = defineConfig({
 	database: 'regenerate-images.sqlite',
 	collections: [Pages],
 	areas: [],
-	plugins: [regenerateImageSizes()]
-};
+	plugins: [regenerateImages()]
+});
+
 export default config;
