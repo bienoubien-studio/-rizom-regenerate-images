@@ -42,6 +42,7 @@ export const regenerateImages: Plugin<never> = () => {
 
 		const processImage = async (document: any) => {
 			// check if document is an image
+			if(!document.mimeType) return
 			if (document.mimeType.includes('image')) {
 				try {
 					console.log(`process ${document.filename} - ${document.id}`);
