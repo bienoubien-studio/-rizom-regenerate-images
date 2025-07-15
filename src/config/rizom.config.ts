@@ -4,7 +4,9 @@ import { collection } from 'rizom';
 import { text } from 'rizom/fields';
 
 const Pages = collection('pages', {
-	group: 'content',
+	panel: {
+		group: 'content',
+	},
 	fields: [text('title').isTitle()]
 });
 

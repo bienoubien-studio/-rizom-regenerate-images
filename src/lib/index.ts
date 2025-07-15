@@ -5,7 +5,7 @@ import HeaderButton from './HeaderButton.svelte';
 
 type GenericDoc = { id: string; filename: string; mimeType: string; [x: string]: any };
 
-export const regenerateImages: Plugin = () => {
+export const regenerateImages: Plugin<never> = () => {
 	const regenerate = async (event: RequestEvent) => {
 		// get params
 		const params = event.url.searchParams;
@@ -28,10 +28,10 @@ export const regenerateImages: Plugin = () => {
 			throw new Error(`${slug} is not an upload collection`);
 		}
 
-		let documents: GenericDoc[];
+		let documents;
 		if (!id) {
 			// no id provided get all documents
-			documents = await collectionAPI.findAll();
+			documents = await collectionAPI.find({});
 		} else {
 			// if id provided process only one document
 			const document = await collectionAPI.findById({ id });
@@ -40,7 +40,7 @@ export const regenerateImages: Plugin = () => {
 
 		let processed = 0;
 
-		const processImage = async (document: GenericDoc) => {
+		const processImage = async (document: any) => {
 			// check if document is an image
 			if (document.mimeType.includes('image')) {
 				try {
@@ -71,7 +71,7 @@ export const regenerateImages: Plugin = () => {
 			}
 		};
 
-		await Promise.all(documents.map((doc: GenericDoc) => processImage(doc)));
+		await Promise.all(documents.map((doc) => processImage(doc)));
 
 		return json({ message: `${processed}/${documents.length} documents regenerated` });
 	};
